@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
   <robot name="bittle">
 
     <link name="base-frame-link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.116"/>
-        <inertia ixx="0.01677" ixy="0" ixz="-2e-05" iyy="0.00658" iyz="0" izz="0.02263"/>
+        <mass value="0.108"/>
+        <inertia ixx="0.01562" ixy="0" ixz="-2e-05" iyy="0.00613" iyz="0" izz="0.02107"/>
       </inertial>
       <visual name="base_frame">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="../meshes/obj/base_frame.obj" scale="1.0 1.0 1.0"/>
         </geometry>
-        <material name="blue"/>
       </visual>
-      <collision name="base_frame">
-        <origin xyz="-5e-05 4e-05 0.01881" rpy="0 0 0"/>
+      <collision name="base_frame_c">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <cylinder radius="0.48621" length="0.27517"/>
+          <mesh filename="../meshes/obj/base_frame.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -34,10 +34,10 @@
           <mesh filename="../meshes/obj/battery.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="battery">
-        <origin xyz="0.00035 0.12791 -0.02026" rpy="0 0 0"/>
+      <collision name="battery_c">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.33052 0.72041 0.13727"/>
+          <mesh filename="../meshes/obj/battery.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -54,12 +54,26 @@
           <mesh filename="../meshes/obj/cover.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="cover">
-        <origin xyz="-0.00678 -0.00736 -0.00602" rpy="0 0 0"/>
+      <collision name="cover_c">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.7111 0.69667 0.21"/>
+          <mesh filename="../meshes/obj/cover.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
+    </link>
+
+    <link name="imu_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="imu">
+        <origin xyz="0 0 0" rpy="0 0 3.14159"/>
+        <geometry>
+          <mesh filename="../meshes/obj/Cube.011.obj" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
     </link>
 
     <link name="left-back-knee-link">
@@ -74,10 +88,10 @@
           <mesh filename="../meshes/obj/left_knee.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="left_back_knee">
-        <origin xyz="-0.21967 0.0045 -0.12598" rpy="-1.5708 1.5708 0"/>
+      <collision name="left_back_knee_c">
+        <origin xyz="-0.08998 0 -0.14638" rpy="-1.5708 1.5708 0"/>
         <geometry>
-          <box size="0.7111 0.69667 0.21"/>
+          <mesh filename="../meshes/obj/left_knee.002.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -94,10 +108,10 @@
           <mesh filename="../meshes/obj/shoulder.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="left_back_shoulder">
-        <origin xyz="-7e-05 -0.24624 0.05003" rpy="-1.5708 1.5708 0"/>
+      <collision name="left_back_shoulder_c">
+        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 1.5708 0"/>
         <geometry>
-          <box size="0.13 0.16 0.68416"/>
+          <mesh filename="../meshes/obj/shoulder.004.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -114,10 +128,10 @@
           <mesh filename="../meshes/obj/left_knee.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="left_front_knee">
-        <origin xyz="-0.22201 0.0045 -0.12574" rpy="-1.5708 1.5708 0"/>
+      <collision name="left_front_knee_c">
+        <origin xyz="-0.09232 0 -0.14614" rpy="-1.5708 1.5708 0"/>
         <geometry>
-          <box size="0.27804 0.6697 0.17624"/>
+          <mesh filename="../meshes/obj/left_knee.003.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -134,12 +148,26 @@
           <mesh filename="../meshes/obj/shoulder.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="left_front_shoulder">
-        <origin xyz="-7e-05 -0.24624 0.05003" rpy="-1.5708 1.5708 0"/>
+      <collision name="left_front_shoulder_c">
+        <origin xyz="0 -0.24575 0.04372" rpy="-1.5708 1.5708 0"/>
         <geometry>
-          <box size="0.13 0.16 0.68416"/>
+          <mesh filename="../meshes/obj/shoulder.007.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
+    </link>
+
+    <link name="mainboard_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="mainboard">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/obj/Plane.obj" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
     </link>
 
     <link name="right-back-knee-link">
@@ -154,10 +182,10 @@
           <mesh filename="../meshes/obj/right_knee.001.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="right_back_knee">
-        <origin xyz="0.21542 0.0119 -0.11382" rpy="-1.5708 -1.5708 0"/>
+      <collision name="right_back_knee_c">
+        <origin xyz="0.08426 -0.00238 -0.1382" rpy="-1.5708 -1.5708 0"/>
         <geometry>
-          <box size="0.27635 0.66791 0.17111"/>
+          <mesh filename="../meshes/obj/right_knee.002.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -174,10 +202,10 @@
           <mesh filename="../meshes/obj/shoulder.002.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="right_back_shoulder">
-        <origin xyz="-7e-05 0.24624 0.07139" rpy="1.5708 -1.5708 0"/>
+      <collision name="right_back_shoulder_c">
+        <origin xyz="0 0.24575 0.0777" rpy="1.5708 -1.5708 0"/>
         <geometry>
-          <box size="0.13 0.16 0.68416"/>
+          <mesh filename="../meshes/obj/shoulder.005.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -194,10 +222,10 @@
           <mesh filename="../meshes/obj/right_knee.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="right_front_knee">
-        <origin xyz="0.22613 0.0119 -0.11382" rpy="-1.5708 -1.5708 0"/>
+      <collision name="right_front_knee_c">
+        <origin xyz="0.09497 -0.00238 -0.1382" rpy="-1.5708 -1.5708 0"/>
         <geometry>
-          <box size="0.27635 0.66791 0.17111"/>
+          <mesh filename="../meshes/obj/right_knee.003.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -214,10 +242,10 @@
           <mesh filename="../meshes/obj/shoulder.003.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </visual>
-      <collision name="right_front_shoulder">
-        <origin xyz="-7e-05 0.24624 0.07139" rpy="1.5708 -1.5708 0"/>
+      <collision name="right_front_shoulder_c">
+        <origin xyz="0 0.24575 0.0777" rpy="1.5708 -1.5708 0"/>
         <geometry>
-          <box size="0.13 0.16 0.68416"/>
+          <mesh filename="../meshes/obj/shoulder.006.obj" scale="1.0 1.0 1.0"/>
         </geometry>
       </collision>
     </link>
@@ -234,12 +262,18 @@
       <child link="cover-link"/>
     </joint>
 
+    <joint name="imu_joint" type="fixed">
+      <origin xyz="-0.00652 0.00827 0.00586" rpy="0 0 -3.14159"/>
+      <parent link="mainboard_link"/>
+      <child link="imu_link"/>
+    </joint>
+
     <joint name="left-back-knee-joint" type="revolute">
       <origin xyz="0 -0.49172 0" rpy="0 0 0"/>
       <parent link="left-back-shoulder-link"/>
       <child link="left-back-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
     </joint>
 
     <joint name="left-back-shoulder-joint" type="revolute">
@@ -247,7 +281,7 @@
       <parent link="base-frame-link"/>
       <child link="left-back-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
     </joint>
 
     <joint name="left-front-knee-joint" type="revolute">
@@ -255,7 +289,7 @@
       <parent link="left-front-shoulder-link"/>
       <child link="left-front-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
     </joint>
 
     <joint name="left-front-shoulder-joint" type="revolute">
@@ -263,7 +297,13 @@
       <parent link="base-frame-link"/>
       <child link="left-front-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
+    </joint>
+
+    <joint name="mainboard_joint" type="fixed">
+      <origin xyz="0.00652 -0.00827 0.06423" rpy="0 0 0"/>
+      <parent link="base-frame-link"/>
+      <child link="mainboard_link"/>
     </joint>
 
     <joint name="right-back-knee-joint" type="revolute">
@@ -271,7 +311,7 @@
       <parent link="right-back-shoulder-link"/>
       <child link="right-back-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
     </joint>
 
     <joint name="right-back-shoulder-joint" type="revolute">
@@ -279,7 +319,7 @@
       <parent link="base-frame-link"/>
       <child link="right-back-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
     </joint>
 
     <joint name="right-front-knee-joint" type="revolute">
@@ -287,7 +327,7 @@
       <parent link="right-front-shoulder-link"/>
       <child link="right-front-knee-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.22173" upper="1.48353" effort="1.0" velocity="1.5708"/>
     </joint>
 
     <joint name="right-front-shoulder-joint" type="revolute">
@@ -295,7 +335,7 @@
       <parent link="base-frame-link"/>
       <child link="right-front-shoulder-link"/>
       <axis xyz="0 0 1.0"/>
-      <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="1.5708"/>
+      <limit lower="-1.5708" upper="1.22173" effort="1.0" velocity="1.5708"/>
     </joint>
 
   </robot>

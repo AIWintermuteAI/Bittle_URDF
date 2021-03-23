@@ -19,9 +19,10 @@ TO-DO:
 - [x] Proper masses for every link, measurements taken by weighing each part with electronic scale
 - [x] Example for running in [Nvidia Isaac Gym](https://developer.nvidia.com/isaac-gym)
 - [ ] Add prismatic joints to emulate the springs in Bittle legs
-- [ ] Measure and tweak joint limits
-- [ ] Change collision objects from primitives to low-poly meshes
-- [ ] Upload two separate versions: one for BiBoard and one for NyBoard
+- [x] Measure and tweak joint limits
+- [x] Add IMU link and joint
+- [x] Change collision objects from primitives to low-poly meshes
+- [x] Upload two separate versions: one for BiBoard and one for NyBoard - no need for now, IMU is located at the same position
 - [ ] Add material descriptions
 
 ## How to run, what to do?
