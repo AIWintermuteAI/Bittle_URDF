@@ -8,11 +8,11 @@ Meshes are downloaded from https://grabcad.com/library/petoi-bittle-evo-quadrupe
 
 The meshes are created by third-party designer, who reverse-engeneered the orginal design by Prof. Li Rongzhong. Consider supporting Prof. Li Rongzhong by buying the original Bittle at 
 
-https://www.seeedstudio.com/CH-Bittle-p-4833.html     (fully assembled version)
+https://www.seeedstudio.com/CH-Bittle-p-4833.html (fully assembled version)
 
 or
 
-https://www.indiegogo.com/projects/bittle-a-palm-sized-robot-dog-for-stem-and-fun     (kit for DIY assembly)
+https://www.petoi.com/collections/robots (kit for DIY assembly)
 
 TO-DO:
 - [x] Working URDF
